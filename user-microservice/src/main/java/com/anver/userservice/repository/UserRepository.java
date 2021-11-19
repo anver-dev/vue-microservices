@@ -13,7 +13,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	
 	public Optional<User> findByUsername(String username);
 	
-	@Query("SELECT u.name FROM user u WHERE u.id in (:pIdList)")
+	@Query("select u.username from User u where u.id in (:pIdList)")
 	public List<String> findByIdList(@Param("pIdList") List<Long> idList);
 	
 }
